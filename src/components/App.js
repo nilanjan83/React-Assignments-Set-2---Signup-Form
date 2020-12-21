@@ -67,7 +67,15 @@ export default class App extends React.Component {
       return;
     }
     let user = this.state.mail.substring(0, this.state.mail.indexOf("@"));
-    this.setState({ username: user });
+    this.setState({
+      username: user,
+      name: "",
+      mail: "",
+      gen: "male",
+      phon: "",
+      pass: "",
+      error: ""
+    });
   };
   render() {
     return (
