@@ -71,7 +71,7 @@ export default class App extends React.Component {
       username: user,
       name: "",
       mail: "",
-      gen: "",
+      gen: "male",
       phon: "",
       pass: "",
       error: ""
