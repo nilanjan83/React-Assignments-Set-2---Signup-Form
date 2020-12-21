@@ -75,7 +75,7 @@ export default class App extends React.Component {
         <div id="main"></div>
         <div>
           {this.state.error && <div>{this.state.error}</div>}
-          {this.state.username && <div>Hello{this.state.username}</div>}
+          {this.state.username && <div>Hello {this.state.username}</div>}
         </div>
         <label>Name</label>
         <input
