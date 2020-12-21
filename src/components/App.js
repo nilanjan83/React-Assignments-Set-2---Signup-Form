@@ -39,15 +39,15 @@ export default class App extends React.Component {
       this.state.phon === "" ||
       this.state.pass === ""
     ) {
-      this.setState({ error: "All fields are mandatory" });
+      this.setState({ error: "All fields are mandatory", username: "" });
       return;
     }
     if (!this.state.name.match(/^[0-9a-zA-Z ]+$/)) {
-      this.setState({ error: "Name is not alphanumeric" });
+      this.setState({ error: "Name is not alphanumeric", username: "" });
       return;
     }
     if (this.state.mail.indexOf("@") < 1) {
-      this.setState({ error: "Email must contain @" });
+      this.setState({ error: "Email must contain @", username: "" });
       return;
     }
     if (
@@ -55,15 +55,24 @@ export default class App extends React.Component {
       this.state.gen !== "female" &&
       this.state.gen !== "other"
     ) {
-      this.setState({ error: "Please identify as male, female or others" });
+      this.setState({
+        error: "Please identify as male, female or others",
+        username: ""
+      });
       return;
     }
     if (!this.state.phon.match(/^[0-9]*$/)) {
-      this.setState({ error: "Phone Number must contain only numbers" });
+      this.setState({
+        error: "Phone Number must contain only numbers",
+        username: ""
+      });
       return;
     }
     if (this.state.pass.length < 6) {
-      this.setState({ error: "Password must contain atleast 6 letters" });
+      this.setState({
+        error: "Password must contain atleast 6 letters",
+        username: ""
+      });
       return;
     }
     let user = this.state.mail.substring(0, this.state.mail.indexOf("@"));
